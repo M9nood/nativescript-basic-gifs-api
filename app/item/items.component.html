@@ -1,0 +1,26 @@
+<Page>
+<ActionBar title="Tenor Gifs" class="action-bar">
+</ActionBar>
+
+<StackLayout horizontalAlignment="center">
+        <TextField [(ngModel)]="search" 
+        secure="false"
+        returnKeyType="done" 
+        (returnPress)="onReturnPress($event)"
+        autocorrect="false"
+        focus="false" 
+        (blur)="onBlur($event)" 
+        class="input input-border"></TextField>
+        <Button text="SEARCH GIFS" (tap)="searchGifs()" class="btn btn-primary btn-active"></Button>
+            <ListView [items]="img" class="list-group">
+                <ng-template let-item="item"> 
+                    <Image [src]="item.media[0].gif.url" stretch="none" class="img-gif img-rounded p-l-15 p-r-15 p-t-15"></Image>
+                    <!-- <Label [nsRouterLink]="['/item', item.id]" [text]=""
+                    class="list-group-item"></Label> -->
+                </ng-template>
+    </ListView>
+</StackLayout>
+</Page>
+
+
+
